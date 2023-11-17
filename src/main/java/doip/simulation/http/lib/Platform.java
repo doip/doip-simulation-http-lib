@@ -5,6 +5,9 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ServerInfo {
-    public List<Platform> platforms;
+public class Platform {
+    public String name;
+    public String url;
+    public String status;
+    public List<Gateway> gateways;
 }
