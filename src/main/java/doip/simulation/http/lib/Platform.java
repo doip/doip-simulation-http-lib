@@ -6,13 +6,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Platform {
-    public String name;
-    public String url;
-    public String status;
-    public List<Gateway> gateways;
+    private String name;
+    private String url;
+    private String status;
+    private List<Gateway> gateways;
 			
 	public String getName() {
-		return name;
+		return this.name;
 	}
 	public void setName(String name) {
 		this.name = name;
