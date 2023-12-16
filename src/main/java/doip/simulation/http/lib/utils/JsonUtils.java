@@ -67,4 +67,19 @@ public class JsonUtils {
 	public static String serialize(Object obj) throws JsonProcessingException {
 		return new ObjectMapper().writeValueAsString(obj);
 	}
+	
+	/**
+	 * Takes a string containing JSON and return the string pretty printed.
+	 * @param jsonString
+	 * @return
+	 * @throws JsonMappingException
+	 * @throws JsonProcessingException
+	 */
+	public static String prettyPrint(String jsonString) throws JsonMappingException, JsonProcessingException {
+		ObjectMapper mapper = new ObjectMapper();
+		Object obj = mapper.readValue(jsonString, Object.class);
+		String pretty = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(obj);
+		return pretty;
+		
+	}
 }
